@@ -1,0 +1,36 @@
+python3 build_index.py
+
+python3 app.py
+
+
+http://localhost:9000/health
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+
+products.json şöyle olmalı
+[
+  {"code": "234SDF4343", "name": "Yüksek akım için manyetik röle"},
+  {"code": "55ABX91", "name": "Mini röle modülü"},
+  ...
+]
+
+
+curl -X POST "http://localhost:9000/search" \
+-H "Content-Type: application/json" \
+-d '{"query": "manyetik röle"}'
+
+
+
+
+{
+  "results": [
+    {"code": "234SDF4343", "name": "Yüksek akım için manyetik röle", "score": 0.91},
+    {"code": "778FSS22", "name": "Manyetik kontaktör", "score": 0.72},
+    {"code": "55ABX91", "name": "Mini röle modülü", "score": 0.48}
+  ]
+}
+
+

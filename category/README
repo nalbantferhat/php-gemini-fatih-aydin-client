@@ -1,0 +1,25 @@
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+
+
+curl -X POST "http://localhost:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+      "name": "Kot etek",
+      "description": "Yüksek bel dar kesim kadın eteği"
+    }'
+
+
+
+
+
+{
+  "category": "121",
+  "confidence": 0.82
+}
+
+
+
